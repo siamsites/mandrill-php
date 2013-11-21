@@ -1,5 +1,5 @@
 {
-	"name" : "teodortalov/mandrill-php",
+	"name" : "talov/mandrill-php",
 	"require" : {
 		"php" : ">=5.3.0"
 	},
