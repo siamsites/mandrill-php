@@ -1,15 +1,11 @@
 {
-    "name": "teodortalov/mandrill-php",
-    "type": "library",
-    "description" : "Mandrill API library Wrapper",
-    "version": "0.1",
-    "license": "MIT",
-    "require": {
-        "php": ">=5.3.0"
-    },
-    	"repositories" : [{
-			"type" : "vcs",
-			"url" : "https://github.com/teodortalov/mandrill-php.git"
-		}
-	]
+	"name" : "teodortalov/mandrill-php",
+	"require" : {
+		"php" : ">=5.3.0"
+	},
+	"autoload" : {
+		"files" : [
+			"Mandrill.php"
+		]
+	}
 }
