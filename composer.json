@@ -1,0 +1,10 @@
+{
+    "name": "teodortalov/mandrill-php",
+    "type": "library",
+    "description" : "Mandrill API library Wrapper",
+    "version": "0.1",
+    "license": "MIT",
+    "require": {
+        "php": ">=5.3.0",
+    }
+}
