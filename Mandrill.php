@@ -230,9 +230,8 @@ abstract class Mandrill {
         $data['key'] = self::$api_key;
         
         $data_string = json_encode($data);
-        
+
         $parsed_url = sprintf(self::$api_url, $call_type, $call);
-        
         if(self::$verbose) error_log("MANDRILL: Sending request to: $parsed_url with data: $data_string");
         if(self::_is_cli()) echo "MANDRILL: Sending request to: $parsed_url with data: $data_string".PHP_EOL;
         
@@ -250,8 +249,13 @@ abstract class Mandrill {
         if(self::_is_cli()) echo "Mandrill API result: $result".PHP_EOL;
         
         if($call != 'ping') $result = json_decode($result);
-        
-        // @todo: Check result and throw exception?
+
+        if(is_array($result)) $result = array_pop($result);
+
+        if($result->status == 'error'){
+        	//todo make error message text rather tha literal
+        	throw new Exception($result->message);
+        }
         
         return $result;
     }
